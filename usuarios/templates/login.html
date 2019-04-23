@@ -1,0 +1,37 @@
+{% extends "base_usuario.html" %}
+{% load staticfiles %}
+{% block body %}
+
+    <form class="form-signin" role="form" 
+        action="{% url 'django.contrib.auth.views.login' %}" method="post">
+
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    &times;
+                </button>
+                Por favor, verifique o Email e/ou Senha informados
+            </div>
+        {% endif %}
+        
+        <input type="text" id="id_username" name="username" class="form-control" 
+            placeholder="Nome" required autofocus>
+
+        <input type="password" id="id_password" name="password" class="form-control" 
+            placeholder="Senha" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+            Login
+        </button>
+
+        <input type="hidden" name="next" value="{{ next }}" />
+
+        <span class="form-signin-or">OU</span>
+
+        <a href="{% url 'registrar' %}" class="form-signin-register">registre-se</a>
+        
+    </form>
+
+{% endblock %}

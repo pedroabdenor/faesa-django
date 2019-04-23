@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link href="{% static "styles/bootstrap.css" %}" rel="stylesheet">
+		<link href="{% static "styles/main.css" %}" rel="stylesheet">
+		<link href="{% static "styles/logged.css" %}" rel="stylesheet">
+		<title>Faesa</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul class="nav nav-pills pull-right">
+					<li class="userLogged">
+						<a href="/perfis/{{perfil_logado.id}}">
+							<img src="{% static "img/photo.jpg" %}" alt="">
+							<span>{{perfil_logado.nome}}</span>
+						</a>
+					</li>
+					<li class="btnLogout"><a href="/logout/">Logout</a></li>
+				</ul>
+				<h3 class="text-muted"><a href="{% url 'index' %}"><img src="{% static "img/logo.webp" %}" alt=""></a></h3>
+			</div>
+			<div class="row content">
+				{% block body %}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

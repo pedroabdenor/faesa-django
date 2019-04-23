@@ -1,0 +1,30 @@
+.nav {
+    margin-top: 20px;
+}
+
+.userLogged {
+    text-transform: uppercase;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #eee;
+}
+.userLogged a {
+    padding: 0!important;
+}
+.userLogged span {
+    padding: 5px 15px 5px 5px;
+    display: inline-block;
+}
+.userLogged img {
+    width: 30px;
+    float: left;
+    margin-right: 10px;
+}
+
+.btnLogout {
+    margin-left: 10px!important;
+}
+
+.btnLogout a {
+    padding: 5px!important;
+}
